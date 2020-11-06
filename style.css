@@ -1,0 +1,271 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --padding: 20px;
+}
+
+/* fonts */
+
+@font-face {
+  font-family: "poppins regular";
+  src: url("fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "poppins light";
+  src: url("fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: "poppins medium";
+  src: url("fonts/Poppins-Medium.ttf");
+}
+
+body {
+  font-family: "poppins light";
+}
+
+/* header */
+
+.header {
+  padding: 0 var(--padding);
+  min-height: 13vh;
+  max-height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "poppins medium";
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: none;
+}
+
+/* main content  */
+
+.page {
+  padding: 0 var(--padding) 2vh;
+  min-height: 87vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 30% 10%;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.info {
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info h2 {
+  font-family: "poppins light";
+  font-size: 2rem;
+}
+
+.info p {
+  color: #5a5a5a;
+  font-size: 1.2rem;
+}
+
+.date {
+  font-size: 1.3rem;
+  font-family: "poppins regular";
+}
+
+.main-img {
+  display: flex;
+}
+
+.main-img .img-left {
+  transition: transform 0.3s ease-out;
+  transform: translateY(-2%);
+}
+
+.main-img:hover .img-left {
+  transition: transform 0.3s ease-out;
+  transform: translateY(0%);
+}
+
+.main-img .img-right {
+  transition: transform 0.3s ease-out;
+  transform: translateY(2%);
+}
+
+.main-img:hover .img-right {
+  transition: transform 0.3s ease-out;
+  transform: translateY(0%);
+}
+
+/* page navigation infecator */
+
+.page-navigation-indicator {
+  display: none;
+}
+
+/* background image */
+
+.large-bg {
+  height: 90vh;
+  background-image: url("./image/large-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* content section */
+
+.my-story h2,
+.my-background h2 {
+  letter-spacing: 2px;
+  font-family: "poppins regular";
+  font-size: 1.1rem;
+}
+
+.my-story p,
+.my-background p {
+  margin: 3vh 0px;
+  font-size: 0.8rem;
+  letter-spacing: 0.9px;
+  line-height: 1.6;
+  color: #5a5a5a;
+  font-family: "poppins regular";
+  word-break: break-all;
+}
+
+.profile-img {
+  margin: 8vh 0;
+}
+
+.profile-img img {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 366px;
+  max-height: 451px;
+}
+
+.info-sub {
+  padding: 0 var(--padding);
+  position: absolute;
+  top: 135vh;
+}
+
+.gallery {
+  margin: 10vh 0 20px;
+}
+
+.gallery img {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 343px;
+  max-height: 340px;
+}
+
+.header,
+.main,
+.content {
+  margin: auto;
+  max-width: 1900px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --padding: 40px;
+  }
+  /* header */
+  .menu {
+    display: block;
+    font-size: 1.1rem;
+  }
+  .menu-icon {
+    display: none;
+  }
+  /* main */
+  .page {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80% 10%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  .info {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-items: flex-start;
+  }
+  .info h2 {
+    font-size: 2.5rem;
+  }
+  .info p {
+    color: #5a5a5a;
+    font-size: 1.3rem;
+  }
+  .date {
+    grid-row: 3/-1;
+    justify-self: start;
+  }
+  /* gallery */
+  .gallery {
+    margin: 10vh 0 10vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --padding: 80px;
+  }
+  /* main */
+  .info h2 {
+    font-size: 3.5rem;
+  }
+  .info p {
+    font-size: 1.6rem;
+    margin-right: 10px;
+  }
+  .main-img {
+    transform: scale(1.4);
+  }
+  /* content */
+  .large-bg {
+    background-position: top;
+    height: 110vh;
+  }
+  .my-story {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+  }
+  .my-story .text {
+    margin: auto;
+    max-width: 800px;
+  }
+  .my-background .text {
+    margin: auto;
+    max-width: 600px;
+  }
+  .my-background {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+  }
+}
